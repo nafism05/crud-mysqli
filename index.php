@@ -18,7 +18,9 @@
 	include('koneksi.php');
 
 	$sql = "SELECT * FROM siswa ORDER BY siswa_nis DESC";
-	if (!$result = mysqli_query($koneksi, $sql)) {
+
+	$result = mysqli_query($koneksi, $sql);
+	if (!$result) { //gagal request data
 		die('Error: '.mysqli_error($koneksi));
 	}else{
 		if (mysqli_num_rows($result) > 0) {
@@ -33,7 +35,7 @@
 					echo '<td>'.$data['siswa_nama'].'</td>';	//menampilkan data nama lengkap dari database
 					echo '<td>'.$data['siswa_kelas'].'</td>';	//menampilkan data kelas dari database
 					echo '<td>'.$data['siswa_jurusan'].'</td>';	//menampilkan data jurusan dari database
-					echo '<td><a href="update.php?id='.$data['siswa_id'].'">Edit</a> / <a href="hapus.php?id='.$data['siswa_id'].'" onclick="return confirm(\'Yakin?\')">Hapus</a></td>';	//menampilkan link edit dan hapus dimana tiap link terdapat GET id -> ?id=siswa_id
+					echo '<td><a href="update.php?id='.$data['siswa_id'].'">Edit</a> / <a href="delete.php?id='.$data['siswa_id'].'" onclick="return confirm(\'Yakin?\')">Hapus</a></td>';	//menampilkan link edit dan hapus dimana tiap link terdapat GET id -> ?id=siswa_id
 				echo '</tr>';
 
 				$no++;	//menambah jumlah nomor urut setiap row

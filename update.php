@@ -13,10 +13,10 @@ $id = $_GET['id'];
 
 //melakukan query ke database dg SELECT table siswa dengan kondisi WHERE siswa_id = '$id'
 $sql = "SELECT * FROM siswa WHERE siswa_id='$id'";
-$show = mysqli_query($koneksi, $sql);
+$result = mysqli_query($koneksi, $sql);
 
 //cek apakah data dari hasil query ada atau tidak
-if(mysqli_num_rows($show) == 0){
+if(mysqli_num_rows($result) == 0){
 
 	//jika tidak ada data yg sesuai maka akan langsung di arahkan ke halaman depan atau beranda -> index.php
 	echo '<script>window.history.back()</script>';
@@ -24,7 +24,7 @@ if(mysqli_num_rows($show) == 0){
 }else{
 
 	//jika data ditemukan, maka membuat variabel $data
-	$data = mysqli_fetch_assoc($show);	//mengambil data ke database yang nantinya akan ditampilkan di form edit di bawah
+	$data = mysqli_fetch_assoc($result);	//mengambil data ke database yang nantinya akan ditampilkan di form edit di bawah
 
 }
 ?>

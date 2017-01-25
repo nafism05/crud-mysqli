@@ -20,10 +20,10 @@ if(isset($_POST['tambah'])){
 	//jika query input sukses
 	if (mysqli_query($koneksi, $sql)) {
 		echo 'Data berhasil di tambahkan! ';		//Pesan jika proses tambah sukses
-		echo '<a href="create.php">Kembali</a>';	//membuat Link untuk kembali ke halaman tambah
+		echo '<a href="index.php">Kembali</a>';	//membuat Link untuk kembali ke halaman tambah
 	} else {
 		echo 'Gagal menambahkan data! ';		//Pesan jika proses tambah gagal
-		echo '<a href="create.php">Kembali</a>';	//membuat Link untuk kembali ke halaman tambah
+		echo '<a href="index.php">Kembali</a>';	//membuat Link untuk kembali ke halaman tambah
 		echo "Error: ".$sql.". ".mysqli_error($koneksi);
 	}
 

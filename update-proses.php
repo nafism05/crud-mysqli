@@ -1,17 +1,6 @@
 <?php
 //mulai proses edit data
 
-// Update MysSQLi Procedural
-include 'koneksi.php';
-
-$sql = "UPDATE petugas SET nama='Aziz' WHERE id=1";
-
-if (mysqli_query($koneksi, $sql)) {
- echo "Data berhasil diperbaharui.";
-} else {
- echo "Error memperbaharui data: " . mysqli_error($koneksi);
-}
-
 //cek dahulu, jika tombol simpan di klik
 if(isset($_POST['simpan'])){
 
@@ -34,12 +23,12 @@ if(isset($_POST['simpan'])){
 	if(mysqli_query($koneksi, $sql)){
 
 		echo 'Data berhasil di simpan! ';		//Pesan jika proses simpan sukses
-		echo '<a href="read.php">Kembali</a>';	//membuat Link untuk kembali ke halaman
+		echo '<a href="index.php">Kembali</a>';	//membuat Link untuk kembali ke halaman
 
 	}else{
 
 		echo 'Gagal menyimpan data! ';		//Pesan jika proses simpan gagal
-		echo '<a href="read.php">Kembali</a>';	//membuat Link untuk kembali ke halaman 
+		echo '<a href="index.php">Kembali</a>';	//membuat Link untuk kembali ke halaman
 
 	}
 
