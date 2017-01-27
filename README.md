@@ -11,15 +11,17 @@ fungsi2 yg biasa dipakai :
 
 Cara Mengatasi jika ada yang error:
 
-    1. Perhatikan atribut 'name' pada form input, pastikan sama dengan $_POST[] yang ada pada file proses
+    *   Pastikan isi dari file koneksi.php sudah benar
+
+    *   Perhatikan atribut 'name' pada form input, pastikan sama dengan $_POST[] yang ada pada file proses
         misal pada file create.php : <input type="text" name="nama_siswa" size="30" required>
         maka pada file create-proses.php : $nama = $_POST['nama_siswa']
         termasuk tombol submit juga diperhatikan
 
-    2. Pastikan query sqlnya sudah benar, meliputi nama TABEL dan nama KOLOM harus sama persis dengan yang ada di database,
+    *   Pastikan query sqlnya sudah benar, meliputi nama TABEL dan nama KOLOM harus sama persis dengan yang ada di database,
         tidak boleh dibolak balik, dan case sensitive(perhatikan huruf kapital atau bukan)
 
-    3. Perhatikan variabelnya, pastikan valuenya benar
+    *   Perhatikan variabelnya, pastikan valuenya benar
         misal pada create-proses.php terdapat code :
 
         $nis		= $_POST['nis'];
